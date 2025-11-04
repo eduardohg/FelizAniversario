@@ -1,0 +1,30 @@
+<div class="carousel-container">
+  <!-- Main Video Player -->
+  @if (selectedVideo) {
+    
+      <h3>{{ selectedVideo.title }}</h3>
+    <div class="video-wrapper">
+      <youtube-player
+        [videoId]="selectedVideo.id" [width]="null"
+          [height]="null">
+      </youtube-player>
+    </div>
+      <button (click)="selectedVideo = null">Close Player</button>
+    
+  }
+
+  <!-- Video Thumbnails Gallery -->
+  <div class="flex justify-center">
+    <div class="flex flex-wrap gap-4 flex-col sm:flex-row justify-center">
+      @for (video of videos; track video.id) {
+        <div class="thumbnail" (click)="selectVideo(video)">
+          <!-- A placeholder image could be used here as a thumbnail -->
+          <img src={{video.thumb}} alt="Thumbnail for {{ video.title }}">
+          
+        </div>
+      }
+    </div>
+  </div>
+</div>
+
+
