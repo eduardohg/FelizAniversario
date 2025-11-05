@@ -1,12 +1,11 @@
-<div class="carousel-container">
+<div class="carousel-container flex flex-col items-center">
   <!-- Main Video Player -->
   @if (selectedVideo) {
     
       <h3>{{ selectedVideo.title }}</h3>
     <div class="video-wrapper">
       <youtube-player
-        [videoId]="selectedVideo.id" [width]="null"
-          [height]="null">
+        [videoId]="selectedVideo.id" [width]="playerWidth">
       </youtube-player>
     </div>
       <button (click)="selectedVideo = null">Close Player</button>
@@ -17,9 +16,9 @@
   <div class="flex justify-center">
     <div class="flex flex-wrap gap-4 flex-col sm:flex-row justify-center">
       @for (video of videos; track video.id) {
-        <div class="thumbnail" (click)="selectVideo(video)">
+        <div class="cursor-pointer border border-gray-300 rounded text-center hover:bg-gray-100 transition sm:w-40" (click)="selectVideo(video)">
           <!-- A placeholder image could be used here as a thumbnail -->
-          <img src={{video.thumb}} alt="Thumbnail for {{ video.title }}">
+          <img src={{video.thumb}} alt="Thumbnail for {{ video.title }}" >
           
         </div>
       }

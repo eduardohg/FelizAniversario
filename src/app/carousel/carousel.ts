@@ -10,6 +10,9 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
   styleUrls: ['./carousel.css']
 })
 export class Carousel {
+  selectedVideo: any = null;
+  playerWidth = 370;
+
   videos = [
     { id: 'ZBmjMGhj-ws', title: 'Sorriso Maroto', thumb:'https://mundorh.com.br/wp-content/uploads/2024/06/Cultivando-Alegria-A-Arte-de-Criar-uma-Familia-Feliz-Mundo-RH.png' },
     { id: '5QI-ydjgvmY',  title: 'Ferrugem', thumb:'https://mundorh.com.br/wp-content/uploads/2024/06/Cultivando-Alegria-A-Arte-de-Criar-uma-Familia-Feliz-Mundo-RH.png' },
@@ -18,9 +21,24 @@ export class Carousel {
     { id: 'z9XzfN4mhEw',  title: 'Dilsinho',  thumb:'https://mundorh.com.br/wp-content/uploads/2024/06/Cultivando-Alegria-A-Arte-de-Criar-uma-Familia-Feliz-Mundo-RH.png' },
   ];
 
-  selectedVideo: any = null;
+  
 
   selectVideo(video: any): void {
     this.selectedVideo = video;
+  }
+
+  ngOnInit(): void {
+    const screenWidth = window.innerWidth;
+
+  if (screenWidth <= 480) { // celular
+    this.playerWidth = 370;
+    
+  } else if (screenWidth <= 768) { // tablet
+    this.playerWidth = 480;
+    
+  } else { // desktop
+    this.playerWidth = 640;
+    
+  }
   }
 }
