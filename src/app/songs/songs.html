@@ -1,5 +1,5 @@
 <div class="flex flex-col items-center mt-10">
-        <h1>Música do Dia</h1>
+        <h1 class="mb-3 text-[2rem] sm:text-[2.5rem]">Música do Dia</h1>
         @for (song of songs; track $index) {
             @if(isSameDay(parseDate(song.data), DataHoje)){
                 <iframe data-testid="embed-iframe" style="border-radius:12px" [src]=song.safeLink class="w-[100%] sm:w-[30%] h-50" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>

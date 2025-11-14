@@ -1,4 +1,23 @@
-<p>countdown works!</p>
-<div>
-    Time Remaining: {{ displayTime() }}
+<div class="flex flex-row justify-center gap-4 p-4">
+  
+  <div class="glass-box w-20 h-20 flex flex-col items-center justify-center rounded-xl">
+    <p class="text-3xl font-bold text-black">{{ days }}</p>
+    <p class="text-sm text-black/80">Dias</p>
+  </div>
+
+  <div class="glass-box w-20 h-20 flex flex-col items-center justify-center rounded-xl">
+    <p class="text-3xl font-bold text-black">{{ hours }}</p>
+    <p class="text-sm text-black/80">Horas</p>
+  </div>
+
+  <div class="glass-box w-20 h-20 flex flex-col items-center justify-center rounded-xl">
+    <p class="text-3xl font-bold text-black">{{ minutes }}</p>
+    <p class="text-sm text-black/80">Minutos</p>
+  </div>
+
+  <div class="glass-box w-20 h-20 flex flex-col items-center justify-center rounded-xl">
+    <p class="text-3xl font-bold text-black">{{ seconds }}</p>
+    <p class="text-sm text-black/80">Segundos</p>
+  </div>
+
 </div>

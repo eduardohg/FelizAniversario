@@ -8,32 +8,45 @@ import { CommonModule } from '@angular/common';
   styleUrl: './countdown.css',
 })
 export class Countdown {
-  private timerId: any;
+  
   readonly futureDate = new Date(new Date(2025, 11, 23, 0,0,0,0)); // Example: 20 seconds from now
+  readonly now = new Date().getTime();
+  days = 0;
+  hours = 0;
+  minutes = 0;
+  seconds = 0;
 
-  secondsRemaining = signal(0);
+  intervalId: any;
 
   ngOnInit(): void {
-    this.timerId = setInterval(() => {
-      const diff = Math.floor((this.futureDate.getTime() - new Date().getTime()) / 1000);
-      if (diff <= 0) {
-        this.secondsRemaining.set(0);
-        clearInterval(this.timerId);
-      } else {
-        this.secondsRemaining.set(diff);
-      }
-    }, 1000);
+    this.startCountdown();
   }
 
   ngOnDestroy(): void {
-    clearInterval(this.timerId);
+    clearInterval(this.intervalId);
   }
 
-  displayTime(): string {
-    const minutes = Math.floor(this.secondsRemaining() / 60);
-    const days = Math.floor(minutes / 1440);
-    const hours = Math.floor((minutes % 1440) / 60);
-    const seconds = this.secondsRemaining() % 60;
-    return `${days}dias, ${hours}:${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  startCountdown() {
+    this.updateCountdown(); // chama 1x imediato
+
+    this.intervalId = setInterval(() => {
+      this.updateCountdown();
+    }, 1000);
+  }
+
+  updateCountdown() {
+    const now = new Date().getTime();
+    const distance = this.futureDate.getTime() - now;
+
+    if (distance < 0) return;
+
+    this.days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    this.hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    this.minutes = Math.floor(
+      (distance % (1000 * 60 * 60)) / (1000 * 60)
+    );
+    this.seconds = Math.floor((distance % (1000 * 60)) / 1000);
   }
 }
