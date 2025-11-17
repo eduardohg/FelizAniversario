@@ -28,7 +28,7 @@ export class Songs {
   
   songs: { link: string; data: string; safeLink?: SafeResourceUrl }[] = [
     
-    {link:'https://open.spotify.com/embed/track/4r6eNCsrZnQWJzzvFh4nlg', data:'14/11/2025'},
+    {link:'https://open.spotify.com/embed/track/4r6eNCsrZnQWJzzvFh4nlg', data:'18/11/2025'},
   {link:'https://open.spotify.com/embed/track/5xTtaWoae3wi06K5WfVUUH', data:'19/11/2025'},
   {link:'https://open.spotify.com/embed/track/3IKhygLEdUOkDmewM6iFBj', data:'20/11/2025'},
   {link:'https://open.spotify.com/embed/track/27tNWlhdAryQY04Gb2ZhUI', data:'21/11/2025'},

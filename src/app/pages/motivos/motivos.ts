@@ -21,8 +21,8 @@ export class Motivos {
   }
 
   motivos = [
-  { texto: "Seu sorriso ilumina meu dia.", data: "06/11/2025" },
-  { texto: "Você me faz querer ser uma pessoa melhor.", data: "07/11/2025" },
+  { texto: "Adoro o jeito como seus olhos brilham quando está feliz.", data: "18/11/2025" },
+  { texto: "Você me faz querer ser uma pessoa melhor.", data: "19/11/2025" },
   { texto: "A forma como você se importa com os outros.", data: "20/11/2025" },
   { texto: "Seu abraço é meu lugar favorito.", data: "21/11/2025" },
   { texto: "Você entende até o que eu não digo.", data: "22/11/2025" },
@@ -30,7 +30,7 @@ export class Motivos {
   { texto: "Você é linda por dentro e por fora.", data: "24/11/2025" },
   { texto: "Adoro o som da sua risada.", data: "25/11/2025" },
   { texto: "Você tem o coração mais doce que já conheci.", data: "26/11/2025" },
-  { texto: "Adoro o jeito como seus olhos brilham quando está feliz.", data: "27/11/2025" },
+  { texto: "Seu sorriso ilumina meu dia.", data: "27/11/2025" },
   { texto: "Você é minha paz em meio ao caos.", data: "28/11/2025" },
   { texto: "Com você, tudo parece possível.", data: "29/11/2025" },
   { texto: "Seu carinho cura qualquer dia ruim.", data: "30/11/2025" },
